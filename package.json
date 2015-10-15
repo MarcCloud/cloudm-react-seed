@@ -4,7 +4,7 @@
   "description": "React seed project with express server and hot module reload.",
   "main": "server.js",
   "scripts": {
-    "test": "babel-node test/index | faucet",
+    "test": "babel-node test/index",
     "build": "webpack --config webpack.config.babel.js",
     "start": "babel-node server"
   },
@@ -29,6 +29,7 @@
     "blue-tape": "^0.1.10",
     "eslint": "^1.6.0",
     "faucet": "0.0.1",
+    "react-addons-test-utils": "^0.14.0",
     "skin-deep": "^0.8.1",
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.2.0",
