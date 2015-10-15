@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import { resolve } from 'path';
+import { resolve, join } from 'path';
 
 export default {
     context: __dirname,
@@ -10,7 +10,7 @@ export default {
         './app/index.js'
     ],
     output: {
-        path: __dirname,
+        path: join(__dirname, 'dist'),
         publicPath: '/',
         filename: 'bundle.js'
     },
