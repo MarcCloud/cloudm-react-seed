@@ -2,28 +2,32 @@ import webpack from 'webpack';
 import { resolve } from 'path';
 
 export default {
-    devtool: '#sourcemap',
+    context: __dirname,
     entry: [
-        'webpack-hot-middleware/client',
+        // Add the client which connects to our middleware
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+        // And then the actual application
         './app/index.js'
     ],
     output: {
-        path: resolve(__dirname + '/dist/scripts'),
-        filename: 'bundle.js',
-        publicPath: '/'
+        path: __dirname,
+        publicPath: '/',
+        filename: 'bundle.js'
     },
+    devtool: '#source-map',
     plugins: [
+        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ],
+    resolve: {
+        extensions: ['', '.js', '.jsx', '.json']
+    },
     module: {
         loaders: [{
             test: /\.jsx?$/,
             loaders: ['babel'],
-            include: resolve(__dirname + '/app')
+            include: resolve('./app')
         }]
-    },
-    resolve: {
-        extensions: ['', '.js', '.jsx', '.json']
     }
 };
