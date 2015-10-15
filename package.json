@@ -1,0 +1,37 @@
+{
+  "name": "cloudm-react-seed",
+  "version": "1.0.0",
+  "description": "React seed project with express server and hot module reload.",
+  "main": "server.js",
+  "scripts": {
+    "test": "babel-node test/index | faucet",
+    "build": "webpack --config webpack.config.babel.js",
+    "start": "babel-node server"
+  },
+  "keywords": [
+    "Babel",
+    "Reac",
+    "Seed"
+  ],
+  "author": "Marco Romero",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "kefir": "^3.1.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.25",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^5.3.2",
+    "blue-tape": "^0.1.10",
+    "eslint": "^1.6.0",
+    "faucet": "0.0.1",
+    "skin-deep": "^0.8.1",
+    "webpack": "^1.12.2",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-hot-middleware": "^2.4.1"
+  }
+}
