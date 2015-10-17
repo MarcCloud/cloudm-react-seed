@@ -4,7 +4,7 @@
   "description": "React seed project with express server and hot module reload.",
   "main": "server.js",
   "scripts": {
-    "test": "babel-node test/index",
+    "test": "babel-node test/index | faucet",
     "build": "webpack --config webpack.config.babel.js",
     "start": "babel-node server"
   },
