@@ -26,6 +26,10 @@ app.get('/', (req, res)=>{
     res.sendFile(resolve('./app/index.html'));
 });
 
+app.get('/api', (req, res)=>{
+    res.json({ message: 'Hello from the API'});
+});
+
 app.listen(process.env.PORT || 3000, ()=>{
     console.log('App running on port 3000');
 });
