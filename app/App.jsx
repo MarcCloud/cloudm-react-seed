@@ -1,8 +1,3 @@
-import React from 'react';
-
-export default React.createClass({
-    render (){
-        return <header><h1>{this.props.message}</h1></header>;
-    }
-});
-
+export default React => (props)=>{
+    return <header><h1>{ props.message + '!!' }</h1></header>;
+};

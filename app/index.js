@@ -1,6 +1,8 @@
-import { createElement as elem } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import App from './App';
+import app from './App';
 
-render(elem(App, { message: 'Welcome' }), document.getElementById('app'));
+const startApp = app(React);
+
+render(startApp({ message: 'Welcome' }), document.getElementById('app'));
 

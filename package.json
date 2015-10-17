@@ -28,6 +28,7 @@
     "babel-loader": "^5.3.2",
     "babel-plugin-react-transform": "^1.1.1",
     "blue-tape": "^0.1.10",
+    "cheerio": "^0.19.0",
     "eslint": "^1.6.0",
     "faucet": "0.0.1",
     "react-addons-test-utils": "^0.14.0",

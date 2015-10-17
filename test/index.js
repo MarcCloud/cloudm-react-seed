@@ -1,11 +1,14 @@
 import test from 'blue-tape';
-import { createElement as elem } from 'react';
-import skin from 'skin-deep';
-import App from '../app/App';
+import React from 'react';
+import { renderToStaticMarkup as render } from 'react-dom/server';
+import $ from 'cheerio';
+import app from '../app/App';
+
+const createApp = app(React);
 
 test('App should render a basic hello message in an h1 element', expect =>{
-    const vdom = skin.shallowRender(elem(App, {message: 'hello'})).findNode('h1');
-    expect.equal(vdom.type, 'h1');
-    expect.equal(vdom.props.children, 'hello');
+    const message = 'hello';
+    let content = $('h1', render(createApp({message})));
+    expect.ok(content.html().indexOf(message) > -1);
     expect.end();
 });
